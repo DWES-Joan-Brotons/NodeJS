@@ -116,6 +116,7 @@ import { productCreateRules, productUpdateRules } from '../validation/products.r
  *       404: { description: No trobat }
  */
 const router = Router();
+
 const validate = (rules) => [
   ...rules,
   (req, res, next) => {
@@ -125,9 +126,16 @@ const validate = (rules) => [
   }
 ];
 
+// Rutas generales
 router.get('/', controller.list);
-router.get('/:id', controller.getById);
 router.post('/', validate(productCreateRules), controller.create);
+
+// RUTA ESPECÍFICA (debe ir antes de /:id)
+router.get('/export.csv', controller.exportToCsv);
+
+// Rutas con parámetro dinámico
+router.get('/:id', controller.getById);
 router.put('/:id', validate(productUpdateRules), controller.update);
 router.delete('/:id', controller.remove);
+
 export default router;
