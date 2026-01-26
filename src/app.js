@@ -7,6 +7,12 @@ import productsRouter from './routes/products.routes.js';
 import notFound from './middlewares/not-found.js';
 import errorHandler from './middlewares/error-handler.js';
 import categoriesRouter from './routes/categories.routes.js';
+import swaggerUi from 'swagger-ui-express';
+import { swaggerSpec } from './swagger.js';
+
+
+
+
 const app = express();
 
 app.use(helmet());
@@ -18,8 +24,16 @@ app.use('/api/v1/categories', categoriesRouter);
 app.get('/health', (_req, res) => {
   res.status(200).json({ status: 'ok' });
 });
+app.use('/api-docs', (_req, res, next) => {
+  res.removeHeader('Content-Security-Policy');
+  next();
+});
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));  
 
 app.use('/api/v1/products', productsRouter);
+
+
+
 
 app.use(notFound);
 app.use(errorHandler);
