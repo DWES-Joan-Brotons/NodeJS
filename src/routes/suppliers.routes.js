@@ -12,6 +12,7 @@ import * as controller from '../controllers/suppliers.controller.js';
  *   get:
  *     summary: Llistar proveïdors
  *     tags: [Suppliers]
+ *     security: [{ "bearerAuth": [] }]
  *     responses:
  *       200:
  *         description: OK
@@ -31,6 +32,7 @@ import * as controller from '../controllers/suppliers.controller.js';
  *   post:
  *     summary: Crear proveïdor
  *     tags: [Suppliers]
+ *     security: [{ "bearerAuth": [] }]
  *     requestBody:
  *       required: true
  *       content:
@@ -54,6 +56,7 @@ import * as controller from '../controllers/suppliers.controller.js';
  *   get:
  *     summary: Obtindre proveïdor per ID
  *     tags: [Suppliers]
+ *     security: [{ "bearerAuth": [] }]
  *     parameters:
  *       - in: path
  *         name: id
@@ -70,6 +73,7 @@ import * as controller from '../controllers/suppliers.controller.js';
  *   put:
  *     summary: Actualitzar proveïdor
  *     tags: [Suppliers]
+ *     security: [{ "bearerAuth": [] }]
  *     parameters:
  *       - in: path
  *         name: id
@@ -92,6 +96,7 @@ import * as controller from '../controllers/suppliers.controller.js';
  *   delete:
  *     summary: Esborrar proveïdor
  *     tags: [Suppliers]
+ *     security: [{ "bearerAuth": [] }]
  *     parameters:
  *       - in: path
  *         name: id

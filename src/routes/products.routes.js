@@ -14,6 +14,7 @@ import { productCreateRules, productUpdateRules } from '../validation/products.r
  *   get:
  *     summary: Llistar productes
  *     tags: [Products]
+ *     security: [{ "bearerAuth": [] }]
  *     parameters:
  *       - in: query
  *         name: page
@@ -50,6 +51,7 @@ import { productCreateRules, productUpdateRules } from '../validation/products.r
  *   post:
  *     summary: Crear producte
  *     tags: [Products]
+ *     security: [{ "bearerAuth": [] }]
  *     requestBody:
  *       required: true
  *       content:
@@ -71,6 +73,7 @@ import { productCreateRules, productUpdateRules } from '../validation/products.r
  *   get:
  *     summary: Obtindre producte per ID
  *     tags: [Products]
+ *     security: [{ "bearerAuth": [] }]
  *     parameters:
  *       - in: path
  *         name: id
@@ -83,6 +86,7 @@ import { productCreateRules, productUpdateRules } from '../validation/products.r
  *   put:
  *     summary: Actualitzar producte
  *     tags: [Products]
+ *     security: [{ "bearerAuth": [] }]
  *     parameters:
  *       - in: path
  *         name: id
@@ -106,6 +110,7 @@ import { productCreateRules, productUpdateRules } from '../validation/products.r
  *   delete:
  *     summary: Esborrar producte
  *     tags: [Products]
+ *     security: [{ "bearerAuth": [] }]
  *     parameters:
  *       - in: path
  *         name: id
